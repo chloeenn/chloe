@@ -1,0 +1,77 @@
+/* Layout */
+
+.home {
+    min-height: 100vh;
+    position: relative;
+    /* create stacking context for the starfield */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 64px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+}
+
+/* Keep all direct children above the canvas */
+.home>* {
+    position: relative;
+    z-index: 1;
+}
+
+.home-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Navigation */
+
+.home-nav {
+    display: inline-flex;
+    gap: 8px;
+    padding: 6px;
+    border-radius: var(--home-radius-pill);
+    background-color: var(--home-surface);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.home-nav-item {
+    border: none;
+    background: transparent;
+    padding: 6px 18px;
+    border-radius: var(--home-radius-pill);
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    color: var(--home-text-muted);
+    transition: background-color 0.18s ease, color 0.18s ease,
+        box-shadow 0.18s ease, transform 0.08s ease;
+}
+
+.home-nav-item:hover {
+    background-color: rgba(148, 163, 184, 0.12);
+}
+
+.home-nav-item--active {
+    background-color: var(--home-accent);
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero */
+
+.home-hero {
+    max-width: var(--home-max-width);
+    text-align: center;
+    padding-inline: 12px;
+}
+
+.home-title {
+    margin-bottom: 16px;
+}
+
+.home-text {
+    color: var(--home-text-muted);
+}
