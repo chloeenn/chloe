@@ -1,9 +1,10 @@
 import "./Home.css";
-import StarField from "./StarField";
+import Experience from "./Experience";
+import Projects from "./Projects";
+
 function Home() {
     return (
-            <main className="home">
-                <StarField count={90} color="#64748b" />
+        <main className="home">
             <header className="home-header">
                 <nav className="home-nav">
                     <button className="home-nav__item home-nav__item--active">
@@ -17,12 +18,11 @@ function Home() {
 
             {/* Intro */}
             <section className="home-hero">
-                <h1 className="home-title">Hi, I'm Chloe ⏾</h1>
-
-                <p className="home-text">
-                    I like building cool stuff.
-                </p>
+                <h1>Hi, I'm Chloe ⏾</h1>
+                <p className="home-text">I like building cool stuff.</p>
             </section>
+            <Experience />
+            <Projects/>
         </main>
     );
 }

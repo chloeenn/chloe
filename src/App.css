@@ -1,9 +1,24 @@
-*{
-  background-color:#ffffff;
-  color: #1d1d1f
-}
-
-h1 {
+/* Apply page-level background and text color only to the document body. */
+body {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+h1,h2 {
+  
+  text-align: center;
+  margin: 0 0 16px;
+  font-size: 2rem;
+}
+p, ul, li, a, span, button {
+  font-size: 1.5rem;
+}
+/* Content stacks above the starfield canvas */
+.app-root {
+  position: relative;
+  z-index: 1;
 }

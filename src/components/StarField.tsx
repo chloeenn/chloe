@@ -139,20 +139,40 @@ export default function StarField({ count = 90, color = "#64748b" }: StarFieldPr
             }
         }
 
-        function handleMove(e: MouseEvent) {
-            // canvas is captured and non-null
-            const rect = canvas.getBoundingClientRect();
-            mouse.current.x = e.clientX - rect.left;
-            mouse.current.y = e.clientY - rect.top;
-        }
+            function handleMove(e: any) {
+                // canvas is captured and non-null
+                const rect = canvas.getBoundingClientRect();
+                let clientX = 0;
+                let clientY = 0;
 
-        function handleLeave() {
-            mouse.current.x = -9999;
-            mouse.current.y = -9999;
-        }
+                // Support mouse/pointer and touch events
+                if (e.touches && e.touches.length) {
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                } else if (e.clientX !== undefined && e.clientY !== undefined) {
+                    clientX = e.clientX;
+                    clientY = e.clientY;
+                } else if (e.pageX !== undefined && e.pageY !== undefined) {
+                    clientX = e.pageX;
+                    clientY = e.pageY;
+                }
 
-        window.addEventListener("mousemove", handleMove);
-        window.addEventListener("mouseleave", handleLeave);
+                mouse.current.x = clientX - rect.left;
+                mouse.current.y = clientY - rect.top;
+            }
+
+            function handleLeave() {
+                mouse.current.x = -9999;
+                mouse.current.y = -9999;
+            }
+
+            // Listen to pointer/mouse/touch so hovering (without click) updates the stars.
+            window.addEventListener("pointermove", handleMove);
+            window.addEventListener("mousemove", handleMove);
+            window.addEventListener("touchstart", handleMove, { passive: true });
+            window.addEventListener("touchmove", handleMove, { passive: true });
+            window.addEventListener("pointerout", handleLeave);
+            window.addEventListener("mouseleave", handleLeave);
 
         return () => {
             window.removeEventListener("mousemove", handleMove);

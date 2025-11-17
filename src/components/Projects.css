@@ -1,0 +1,250 @@
+.projects {
+  padding: 48px 16px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.projects-title {
+  text-align: center;
+  margin: 0 0 16px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ---------- iMac shell ---------- */
+
+.imac-shell {
+  width: min(1500px, 92vw);       /* large but responsive */
+  aspect-ratio: 16 / 9.8;         /* overall device ratio */
+  margin-inline: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Outer frame (black bezel) */
+.imac-bezel {
+  position: absolute;
+  inset: 0;
+  background: #050608;
+  border-radius: 24px;
+  padding: 18px 28px 22px;
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.45),
+    0 0 0 1px rgba(15, 23, 42, 0.6);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Camera dot */
+.imac-camera {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f9fafb 0, #020617 70%);
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+/* Inner white screen */
+.imac-screen {
+  width: 100%;
+  background: #fdfdfd;
+  border-radius: 18px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.55);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fills the whole screen: both folder view + project view live in here */
+.screen-inner {
+  position: absolute;
+  inset: 0;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+/* ---------- Folder grid (closed state) ---------- */
+
+.folder-grid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.folder-tile {
+  min-width: 140px;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+/* macOS-style blue folder */
+.folder-icon {
+  width: clamp(64px, 9vw, 90px);
+  height: clamp(46px, 6.5vw, 66px);
+  border-radius: 13px;
+  background: linear-gradient(145deg, #4da7ff, #2f80ff);
+  position: relative;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.32);
+}
+
+.folder-icon::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 9px;
+  width: 46px;
+  height: 15px;
+  border-radius: 9px 9px 6px 6px;
+  background: linear-gradient(145deg, #7ac4ff, #4da7ff);
+}
+
+.folder-icon::after {
+  content: "⋯";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.folder-name {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.folder-tile:hover,
+.folder-tile:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+
+.folder-tile:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 4px;
+}
+
+/* ---------- Project viewer (open state) ---------- */
+
+.project-viewer {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 16px 18px 18px;
+}
+
+.project-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.project-viewer-label {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.project-viewer-caption {
+  margin: 3px 0 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.project-close-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  background: #f3f4f6;
+  color: #111827;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.project-close-btn:hover,
+.project-close-btn:focus-visible {
+  background: #e5e7eb;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Shared frame (image & video same size) */
+.project-media-frame {
+  flex: 1;
+  width: 100%;
+  border-radius: 10px;
+  background: #0f172a;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
+  display: flex;
+}
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+
+
+/* ---------- Shared padding for both states ---------- */
+
+.folder-grid,
+.project-viewer {
+  box-sizing: border-box;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .imac-bezel {
+    padding-inline: 16px;
+  }
+
+  .screen-inner {
+    padding: 14px 14px 16px;
+  }
+
+  .folder-grid {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .folder-icon {
+    width: 70px;
+    height: 52px;
+  }
+
+  .project-viewer-caption {
+    display: none;
+  }
+}

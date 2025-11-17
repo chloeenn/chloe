@@ -26,7 +26,6 @@
 }
 
 /* Navigation */
-
 .home-nav {
     display: inline-flex;
     gap: 8px;
@@ -41,7 +40,7 @@
     background: transparent;
     padding: 6px 18px;
     border-radius: var(--home-radius-pill);
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     letter-spacing: 0.02em;
     cursor: pointer;
     color: var(--home-text-muted);
@@ -58,20 +57,4 @@
     color: #000000;
     font-weight: 600;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero */
-
-.home-hero {
-    max-width: var(--home-max-width);
-    text-align: center;
-    padding-inline: 12px;
-}
-
-.home-title {
-    margin-bottom: 16px;
-}
-
-.home-text {
-    color: var(--home-text-muted);
 }
