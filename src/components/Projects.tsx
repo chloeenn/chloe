@@ -59,7 +59,7 @@ function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <h1 className="projects-title">Projects</h1>
+      <h1 className="projects-title">Projects.</h1>
 
       <div
         className="imac-shell"

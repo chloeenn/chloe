@@ -1,0 +1,101 @@
+:root {
+  --nav-radius-pill: 999px;
+  --nav-bg: rgba(245, 246, 248, 0.95);       /* slightly darker than pure white */
+  --nav-border: rgba(148, 163, 184, 0.4);
+  --nav-text: #111827;
+  --nav-text-muted: #4b5563;                 /* stronger than before */
+}
+
+/* Fixed centered bar */
+.nav-header {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Floating pill */
+.nav-container {
+  pointer-events: auto;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  border-radius: var(--nav-radius-pill);
+  padding: 12px 32px;
+  border: 1px solid var(--nav-border);
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  /* subtle float animation on hover */
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.nav-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+  background-color: rgba(248, 249, 251, 0.98);
+}
+
+/* List */
+.nav-list {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links */
+.nav-link {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  font-size: 1.5rem;                  /* matches your App.css */
+  color: var(--nav-text-muted);
+  padding: 6px 6px;
+  position: relative;
+
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* Underline + soft highlight */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 60%;
+  height: 2px;
+  border-radius: 999px;
+  background: #111827;
+
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+
+  transition:
+    transform 0.22s ease-out,
+    opacity 0.22s ease-out;
+}
+
+/* Hover state – a bit more visible */
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--nav-text);
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}

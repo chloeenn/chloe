@@ -1,0 +1,274 @@
+.hero-solar {
+  position: relative;
+  width: min(760px, 90vw);   /* bigger hero */
+  aspect-ratio: 4 / 3;       /* wider than tall */
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main system is still centered but with more room */
+.hero-solar-system {
+  position: absolute;
+  width: 1060px;
+  height: 1060px;
+  transition: transform 0.25s ease-out;
+}
+
+/* orbits */
+.orbit {
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  border: 3px solid rgba(209, 213, 219, 0.9);
+  transform-origin: center;
+}
+
+.orbit--outer {
+  inset: -2%;
+  animation: orbit-spin 32s linear infinite;
+}
+
+.orbit--middle {
+  inset: 18%;
+  border-style: dashed;
+  animation: orbit-spin 42s linear infinite reverse;
+}
+
+.orbit--inner {
+  inset: 34%;
+  border-color: rgba(209, 213, 219, 0.7);
+  animation: orbit-spin 56s linear infinite;
+}
+
+/* planets */
+.planet {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.planet--one {
+  background: radial-gradient(circle at 30% 30%, #4f46e5, #1d4ed8);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+.planet--two {
+  background: radial-gradient(circle at 30% 30%, #f97316, #ea580c);
+  box-shadow: 0 0 12px rgba(234, 88, 12, 0.4);
+}
+
+.planet--three {
+  background: radial-gradient(circle at 30% 30%, #0ea5e9, #0369a1);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.4);
+}
+
+.planet:hover,
+.planet:focus-visible {
+  transform: translateX(-50%) scale(1.8);
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.45);
+}
+
+/* stars */
+.solar-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.8);
+  opacity: 0.8;
+}
+
+.solar-star--one {
+  top: 8%;
+  left: 18%;
+  animation: star-float 10s ease-in-out infinite;
+}
+
+.solar-star--two {
+  top: 78%;
+  right: 6%;
+  animation: star-float 14s ease-in-out infinite reverse;
+}
+
+.solar-star--three {
+  top: 44%;
+  left: 88%;
+  animation: star-float 18s ease-in-out infinite;
+}
+
+/* center text */
+.hero-solar-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-solar-center h1 {
+  margin-bottom: 6px;
+}
+
+.hero-solar-center p {
+  margin: 0;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* bottom pill */
+.hero-solar-panel {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 260px;
+  max-width: 360px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: rgba(249, 250, 251, 0.95);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.panel-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.panel-desc {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* top-left label */
+.hero-solar-tag {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  padding: 10px;
+  border-radius: 999px;
+  background-color: rgba(249, 250, 251, 0.95);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.hero-solar-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #f97316);
+}
+
+/* right “currently” card */
+.hero-solar-current {
+  position: absolute;
+  right: -40%;
+  top: 30%;
+  max-width: 260px;
+
+  padding: 14px 18px;
+  border-radius: 20px;
+  background-color: rgba(249, 250, 251, 0.96);
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
+
+  text-align: left;
+}
+
+.current-label {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.current-line {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* animations */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes star-float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .hero-solar {
+    width: min(420px, 92vw);
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-solar-system {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-solar-current {
+    position: static;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+
+  .hero-solar-tag {
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-solar-panel {
+    bottom: 0;
+  }
+}

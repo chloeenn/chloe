@@ -8,10 +8,8 @@ function App() {
 
   return (
     <>
-      {/* Global background canvas (fixed, behind everything) */}
       <StarField />
       <div className="app-root">
-        {/* Main Intro */}
         <Home />
       </div>
     </>
