@@ -1,24 +1,17 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
-}
-
-/* Scroll container */
+/* The page content wrapper */
 .home {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  padding-top: 120px; /* space for navbar */
+  /* take full height of the scroll container */
+  min-height: 100%;
+  padding-top: 120px; /* space for the fixed navbar, match your nav height */
+  box-sizing: border-box;
 }
 
-/* Each snap page */
+/* Each snap "page" */
 .home-section {
-  height: 100vh;
-  scroll-snap-align: start;
+  /* one full viewport minus navbar */
+  min-height: calc(100vh - 120px);
+
+  scroll-snap-align: start; /* or 'center' if you prefer */
 
   display: flex;
   flex-direction: column;
@@ -31,7 +24,7 @@ html, body {
 
 /* Hero */
 .home-hero h1 {
-  font-size: clamp(2.8rem, 5vw, 3.4rem);
+  font-size: clamp(2.2rem, 4.6vw, 2.6rem);
   font-weight: 600;
   margin: 0 0 16px;
 }
@@ -41,7 +34,6 @@ html, body {
   color: #6b7280;
   margin: 0;
 }
-
 
 /* About */
 .home-about__content {
@@ -63,6 +55,12 @@ html, body {
 }
 
 /* Contact */
+
+.home-contact h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
 .contact-links {
   margin-top: 18px;
   display: flex;

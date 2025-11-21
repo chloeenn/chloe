@@ -1,3 +1,4 @@
+
 .experience {
     max-width: var(--home-max-width, 880px);
     margin: 0 auto;
@@ -37,7 +38,7 @@
     color: var(--home-text-muted, #475569);
 }
 .company {
-    /* font-size: 0.95rem; */
+   
     color: var(--home-text-muted, #475569);
     margin-bottom: 8px;
     text-decoration: none;;
@@ -51,6 +52,7 @@
         transition: none;
     }
 }
+
 
 .experience>* {
     position: relative;

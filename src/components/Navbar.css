@@ -24,7 +24,7 @@
   background: var(--nav-bg);
   backdrop-filter: blur(14px);
   border-radius: var(--nav-radius-pill);
-  padding: 12px 32px;
+  padding: 8px 20px;
   border: 1px solid var(--nav-border);
 
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
@@ -45,7 +45,7 @@
 /* List */
 .nav-list {
   display: flex;
-  gap: 32px;
+  gap: 20px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -56,8 +56,6 @@
   border: none;
   background: none;
   cursor: pointer;
-
-  font-size: 1.5rem;                  /* matches your App.css */
   color: var(--nav-text-muted);
   padding: 6px 6px;
   position: relative;
