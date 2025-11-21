@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Projects.css";
 
-import demo1 from "../assets/project-1.png";
-import demo2 from "../assets/project-2.png";
+import demo1 from "../assets/project-1.webp";
+import demo2 from "../assets/project-2.webp";
 
 type MediaType = "image" | "video";
 
