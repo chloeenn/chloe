@@ -9,13 +9,12 @@ body {
 }
 
 h1,h2 {
-  
   text-align: center;
   margin: 0 0 16px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 p, ul, li, a, span, button {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 /* Content stacks above the starfield canvas */
 .app-root {
