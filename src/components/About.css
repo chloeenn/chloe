@@ -1,0 +1,133 @@
+.about {
+    padding: 140px 24px 160px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-wrap {
+    width: min(1100px, 100%);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* text side */
+
+.about-eyebrow {
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 12px;
+}
+
+.about-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111827;
+    margin: 0 0 22px;
+    max-width: 580px;
+}
+
+.about-text {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+/* right side */
+
+.about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    width: 380px;
+    height: 380px;
+}
+
+.about-anim {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.4);
+}
+
+.about-bubble {
+    position: absolute;
+    bottom: 68%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+    font-size: 1.2rem;
+    color: #111827;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.about-bubble::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.about-blob:hover .about-bubble {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* responsive */
+
+@media (max-width: 820px) {
+    .about-wrap {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-right {
+        order: -1;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1.06rem;
+    }
+
+    .about-blob {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@keyframes blob-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

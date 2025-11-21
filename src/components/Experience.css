@@ -33,6 +33,9 @@
     font-weight: 600;
 }
 
+.date {
+    color: var(--home-text-muted, #475569);
+}
 .company {
     /* font-size: 0.95rem; */
     color: var(--home-text-muted, #475569);

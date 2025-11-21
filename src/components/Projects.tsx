@@ -13,33 +13,29 @@ type Media = {
   type: MediaType;
   src: string;
   title: string;
+  githubUrl?: string;
 };
 
 const mediaList: Media[] = [
   {
     id: "folderA",
-    label: "Project One",
-    caption: "Short description of project one.",
+    label: "Chat with Youtube",
+    caption: "A full-stack AI-powered web application that lets users paste YouTube URLs and ask questions about video content.",
     type: "image",
     src: demo1,
     title: "Project One screenshot",
+    githubUrl: "https://github.com/chloeenn/chat-ytb",
   },
   {
     id: "folderB",
-    label: "Project Two",
-    caption: "Short description of project two.",
+    label: "Syllabus to Calendar",
+    caption: "An app that helps students turn course syllabi (PDFs) into .ics calendar files.",
     type: "image",
     src: demo2,
     title: "Project Two screenshot",
+    githubUrl: "https://github.com/chloeenn/syncabus",
   },
-  {
-    id: "folderC",
-    label: "Project Three",
-    caption: "Short description of project three.",
-    type: "video",
-    src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    title: "Demo video",
-  },
+
 ];
 
 type FolderId = Media["id"];
@@ -109,18 +105,26 @@ function Projects() {
                     className="project-close-btn"
                     type="button"
                     onClick={handleClose}
+                    aria-label="Close project viewer"
                   >
-                    Close
+                    ✕
                   </button>
                 </header>
 
                 <div className="project-media-frame">
                   {activeMedia.type === "image" ? (
-                    <img
-                      src={activeMedia.src}
-                      alt={activeMedia.title}
-                      className="project-media"
-                    />
+                    <a
+                      href={activeMedia.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-media-link"
+                    >
+                      <img
+                        src={activeMedia.src}
+                        alt={activeMedia.title}
+                        className="project-media"
+                      />
+                    </a>
                   ) : (
                     <iframe
                       className="project-media"

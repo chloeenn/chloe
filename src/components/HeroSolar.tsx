@@ -5,15 +5,15 @@ import "./HeroSolar.css";
 type PlanetId = "ai" | "frontend" | "playground";
 
 const PLANET_LABELS: Record<PlanetId, string> = {
-  ai: "AI & data systems",
-  frontend: "Interfaces & UX",
-  playground: "Experiments & little tools",
+  ai: "Productive things",
+  frontend: "Pretty things",
+  playground: "Chaotic things",
 };
 
 const PLANET_DESCRIPTIONS: Record<PlanetId, string> = {
-  ai: "Agentic workflows, internal AI tools, and data-ish things.",
-  frontend: "Minimal UIs, clean layouts, and calm interactions.",
-  playground: "Weird ideas, prototypes, and hackathon projects.",
+  ai: "Tools that get things done.",
+  frontend: "Screens that don’t yell at your eyes.",
+  playground: "Ideas I built after saying ‘what if…’ at 2AM.",
 };
 
 const HeroSolar: React.FC = () => {
@@ -100,8 +100,8 @@ const HeroSolar: React.FC = () => {
 
       {/* center text */}
       <div className="hero-solar-center">
-        <h1>Hi, I&apos;m Chloe 🌙</h1>
-        <p>Building clean, intentional things.</p>
+        <h1>Hi, I&apos;m Chloe ☾</h1>
+        <p>I like building cool stuff.</p>
       </div>
 
       {/* bottom info pill */}

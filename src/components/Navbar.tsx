@@ -6,11 +6,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" },
+  { id: "hero", label: "☾" },
+  { id: "about", label: "about me." },
+  { id: "experience", label: "experience." },
+  { id: "projects", label: "projects." },
+  { id: "contact", label: "contact." },
 ];
 
 export default function Navbar() {

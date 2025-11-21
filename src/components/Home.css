@@ -61,3 +61,27 @@ html, body {
   color: #4b5563;
   margin-bottom: 14px;
 }
+
+/* Contact */
+.contact-links {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #374151;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  color: #111827;
+  border-color: #9ca3af;
+}
