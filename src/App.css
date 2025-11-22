@@ -14,15 +14,36 @@ body {
   overflow: hidden;
 }
 
-/* Optional global typography defaults */
+:root {
+  /* Base typography scale tuned for standard UI/UX */
+  --font-base: 16px;            /* 1rem */
+  --text-sm: 0.875rem;         /* 14px */
+  --text-md: 1rem;             /* 16px */
+  --text-lg: 1.125rem;         /* 18px */
+  --h3: 1.125rem;              /* 18px */
+  --h2: 1.375rem;              /* 22px */
+  --h1: 1.875rem;              /* 30px */
+  --muted: #6b7280;
+}
+
+html { font-size: var(--font-base); }
+
 h1, h2 {
   text-align: center;
   margin: 0 0 16px;
-  font-size: 1.2rem;
 }
 
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+/* sensible defaults for text elements */
 p, ul, li, a, span, button {
-  font-size: 0.8rem;
+  font-size: var(--text-md);
 }
 
 /* Scroll container: this is where the snapping happens */

@@ -122,14 +122,14 @@
 }
 
 .hero-solar-center h1 {
-  font-size: 1.5rem;
+  font-size: var(--h1);
   margin-bottom: 6px;
 }
 
 .hero-solar-center p {
   margin: 0;
-  font-size: 0.7rem;
-  color: #6b7280;
+  font-size: var(--text-md);
+  color: var(--muted, #6b7280);
 }
 
 /* bottom pill */
@@ -156,14 +156,14 @@
 }
 
 .panel-label {
-  font-size: 0.9rem;
+  font-size: var(--text-md);
   font-weight: 600;
   color: #111827;
 }
 
 .panel-desc {
-  font-size: 0.85rem;
-  color: #6b7280;
+  font-size: var(--text-sm);
+  color: var(--muted, #6b7280);
 }
 
 /* top-left label */
@@ -174,7 +174,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.65rem;
+  font-size: var(--text-sm);
   color: #6b7280;
   padding: 10px;
   border-radius: 999px;
@@ -206,7 +206,7 @@
 
 .current-label {
   margin: 0 0 4px;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #9ca3af;
@@ -214,8 +214,8 @@
 
 .current-line {
   margin: 0;
-  font-size: 0.8rem;
-  color: #4b5563;
+  font-size: var(--text-sm);
+  color: var(--muted, #4b5563);
 }
 
 /* animations */
@@ -248,26 +248,41 @@
   .hero-solar {
     width: min(420px, 92vw);
     aspect-ratio: 1 / 1;
+    /* switch to a stacked flow on small screens to avoid overlap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 18px 8px;
   }
 
   .hero-solar-system {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
+    position: relative; /* allow the system to flow in document */
+    transform: none !important;
   }
 
+  /* Stack info cards below the solar system */
   .hero-solar-current {
     position: static;
-    margin-top: 16px;
-    max-width: 100%;
+    margin-top: 6px;
+    max-width: 92%;
+    align-self: center;
   }
 
   .hero-solar-tag {
-    top: 4%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-bottom: 6px;
   }
 
   .hero-solar-panel {
-    bottom: 0;
+    position: static;
+    transform: none;
+    margin-top: 6px;
   }
 }

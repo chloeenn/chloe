@@ -13,6 +13,11 @@
   margin: 0 0 12px;
 }
 
+.projects-title {
+  font-size: var(--h2);
+  font-weight: 600;
+}
+
 /* ---------- iMac shell ---------- */
 
 .imac-shell {
@@ -22,7 +27,7 @@
   aspect-ratio: 16 / 9;
   margin-inline: auto;
   position: relative;
-  box-sizing: border-box;
+  font-size: var(--text-md);
 }
 
 /* Outer frame (black bezel) */
@@ -140,6 +145,11 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.folder-name {
+  font-size: var(--text-md);
+  color: #0f172a;
+}
+
 
 .folder-tile:hover,
 .folder-tile:focus-visible {
@@ -189,15 +199,15 @@
 
 .project-viewer-label {
   margin: 0;
-  font-size: 0.98rem;
-  font-weight: 600;
+  font-size: var(--text-lg);
+  font-weight: 700;
   color: #111827;
 }
 
 .project-viewer-caption {
   margin: 3px 0 0;
-  font-size: 0.8rem;
-  color: #6b7280;
+  font-size: var(--text-sm);
+  color: var(--muted, #6b7280);
 }
 
 .project-close-btn {

@@ -96,12 +96,13 @@ const HeroSolar: React.FC = () => {
         <span className="solar-star solar-star--one" />
         <span className="solar-star solar-star--two" />
         <span className="solar-star solar-star--three" />
-      </div>
+        
+        {/* center text - moved inside the solar system so it stays centered with the orbits */}
+        <div className="hero-solar-center">
+          <h1>Hi, I&apos;m Chloe ☾</h1>
+          <p>I like building cool stuff.</p>
+        </div>
 
-      {/* center text */}
-      <div className="hero-solar-center">
-        <h1>Hi, I&apos;m Chloe ☾</h1>
-        <p>I like building cool stuff.</p>
       </div>
 
       {/* bottom info pill */}
