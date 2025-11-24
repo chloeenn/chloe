@@ -8,9 +8,8 @@ body {
   background-color:#e5e7eb;
   color: #1d1d1f;
   -webkit-font-smoothing: antialiased;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: 'Switzer', "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Segoe UI", sans-serif;
-  /* prevent body from scrolling – we want only .app-root to scroll */
   overflow: hidden;
 }
 
@@ -66,8 +65,12 @@ h2 {
 }
 
 /* sensible defaults for text elements */
+/* Use Switzer for body text elements */
 p, ul, li, a, span, button {
   font-size: var(--text-md);
+  font-family: 'Switzer', "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
+  font-weight: 400;
 }
 
 /* Scroll container: this is where the snapping happens */
@@ -80,5 +83,11 @@ p, ul, li, a, span, button {
   scroll-behavior: smooth;
 
   /* snaps account for fixed navbar height */
-  scroll-padding-top: 40px;
+  scroll-padding-top: 20px;
+}
+
+.amp-sentient {
+    font-family: 'Sentient', ui-serif, Georgia, serif;
+    font-style: italic;  
+    font-weight: 400;    
 }

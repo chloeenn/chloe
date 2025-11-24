@@ -1,17 +1,80 @@
-
 .experience {
     max-width: var(--home-max-width, 880px);
     margin: 0 auto;
-    padding: 24px 12px;
+    padding: 24px 12px 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .experience-inner {
     background: transparent;
 }
 
+/* heading */
+.experience-inner>h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* focus strip (data. web. research.) */
+.experience-focus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.focus-label {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+}
+
+.focus-tag {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 2px 0;
+    font-size: 0.86rem;
+    letter-spacing: 0.14em;
+    text-transform: lowercase;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.focus-tag::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 1px;
+    background: #000000;
+    transition: width 0.22s ease;
+    opacity: 0.9;
+}
+
+.focus-tag:hover,
+.focus-tag--active {
+    color: #111827;
+    transform: translateY(-1px);
+}
+
+.focus-tag:hover::after,
+.focus-tag--active::after {
+    width: 100%;
+}
+
+/* experience list */
 .list {
     display: grid;
-    gap: 12px;
+    gap: 4px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -19,7 +82,9 @@
 
 .list-item {
     background: transparent;
-    padding: 14px;
+    padding: 14px 4px;
+    border-radius: 12px;
+    transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease;
 }
 
 .list-item-head {
@@ -27,37 +92,64 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .role {
-    font-weight: 700;
-    font-size: var(--text-lg);
+    font-weight: 500;
+    font-size: var(--text-md);
 }
 
 .date {
     color: var(--muted, #475569);
     font-size: var(--text-sm);
 }
+
 .company {
     color: var(--muted, #475569);
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-decoration: none;
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     font-weight: 500;
 }
+
 .company:hover {
     color: #0f172a;
 }
 
+/* highlighted vs dimmed states */
+.list-item--active {
+    opacity: 1;
+    transform: translateX(6px);
+    background: rgba(248, 250, 252, 0.9);
+}
+
+.list-item--dim {
+    opacity: 0.5;
+}
+
+/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .experience-item {
+
+    .list-item,
+    .focus-tag {
         transition: none;
     }
 }
 
+@media (max-width: 640px) {
+    .experience-inner>h1 {
+        font-size: 1.8rem;
+        text-align: left;
+    }
 
-.experience>* {
-    position: relative;
-    z-index: 1;
+    .experience-focus {
+        justify-content: flex-start;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+
+    .list-item {
+        padding-inline: 0;
+    }
 }

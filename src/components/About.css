@@ -17,15 +17,16 @@
 .about-left {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 20px;
 }
 
 .about-title {
-    font-size: var(--h2);
-    font-weight: 600;
-    line-height: 1.25;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.15;
     color: #111827;
-    margin: 0;
+    margin: 0 0 18px;
+    text-align: left;
 }
 
 .about-tagline {
@@ -56,12 +57,12 @@
 }
 
 .about-label {
-    font-size: var(--text-sm);
+    font-size: 0.75rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     color: #9ca3af;
-    margin: 0;
+    text-transform: lowercase;
 }
+
 
 .about-body {
     display: flex;
@@ -77,17 +78,16 @@
 }
 
 .about-list li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     padding-left: 0;
     position: relative;
-
-    font-size: var(--text-md);
-    line-height: 1.55;
-    color: var(--muted, #4b5563);
-
-    transition: transform 0.16s ease, opacity 0.16s ease;
     opacity: 0.9;
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: #4b5563;
+    transition: transform 0.16s ease, opacity 0.16s ease;
 }
+
 
 .about-list li::before {
     content: none;
@@ -187,7 +187,7 @@
     }
 
     .about-label {
-        font-size: var(--text-sm);
+        font-size: 0.75rem;
     }
 
     .about-blob {
@@ -198,12 +198,13 @@
 
 /* float animation */
 @keyframes blob-float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-8px);
     }
 }
-
-

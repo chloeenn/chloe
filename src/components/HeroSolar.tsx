@@ -51,7 +51,7 @@ const HeroSolar: React.FC = () => {
           <span className="hero-solar-dot" />
         <p className="current-label">Education</p>
         <p className="current-line">
-          Computer Science @ York University
+          Computer Science <span className="amp-sentient">@</span> York University
         </p>
       </aside>
       </div>
@@ -99,7 +99,7 @@ const HeroSolar: React.FC = () => {
         
         {/* center text - moved inside the solar system so it stays centered with the orbits */}
         <div className="hero-solar-center">
-          <h1>chloe</h1>
+          <h1>chloe.</h1>
         </div>
       </div>
 
@@ -124,7 +124,7 @@ const HeroSolar: React.FC = () => {
       <aside className="hero-solar-current">
         <p className="current-label">Currently</p>
         <p className="current-line">
-          Enterprise Data &amp; AI intern @ City of Toronto
+          Enterprise Data <span className="amp-sentient">&amp;</span> AI intern <span className="amp-sentient">@</span> City of Toronto
         </p>
       </aside>
     </div>

@@ -10,7 +10,7 @@ function About() {
                 <div className="about-left">
                     {/* Heading */}
                     <header className="about-heading">
-                        <h1 className="about-title">I’m Chloe</h1>
+                        <h1 className="about-title">so, chloe</h1>
                     </header>
 
                     {/* ABOUT + GOALS SECTIONS */}
@@ -21,11 +21,13 @@ function About() {
                             <div className="about-body">
                                 <ul className="about-list">
                                     <li>
-                                        A CS student working in Data &amp; AI. I like building small tools,
-                                        organizing messy data, and understanding how things actually work under the hood.
+                                       I’m in my early 20s, studying Computer Science and working in Data <span className="amp-sentient">&amp;</span> AI.
                                     </li>
                                     <li>
-                                        Most days I learn something new; on good days, I don’t break anything in the process.
+                                        I’m still figuring things out, but I enjoy building small tools, cleaning messy data, and understanding how things actually work under the hood.
+                                    </li>
+                                    <li>
+                                        Most days I learn something new; the rest I spend trying not to break anything important.
                                     </li>
 
                                 </ul>
@@ -39,10 +41,10 @@ function About() {
                             <div className="about-body">
                                 <ul className="about-list">
                                     <li>
-                                        Grow into data engineering — better pipelines, cleaner architecture, fewer mystery errors.
+                                        Grow into data engineering, build cleaner architecture, and reduce mystery errors.
                                     </li>
                                     <li>
-                                        Become a solid software engineer who understands systems deeply, not just “when it compiles.”
+                                        Become a solid software engineer who understands systems deeply.
                                     </li>
                                     <li>
                                         Keep building things that matter and make someone’s day a bit easier.
