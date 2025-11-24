@@ -57,7 +57,7 @@
 /* Contact */
 
 .home-contact h2 {
-  font-size: 1.6rem;
+  font-size: var(--h2);
   margin-bottom: 16px;
 }
 
@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: #6b7280;
 }
 

@@ -178,7 +178,7 @@
     }
 
     .about-title {
-        font-size: 1.9rem;
+        font-size: var(--h2);
     }
 
     .about-block {
@@ -187,7 +187,7 @@
     }
 
     .about-label {
-        font-size: 0.78rem;
+        font-size: var(--text-sm);
     }
 
     .about-blob {

@@ -99,9 +99,8 @@ const HeroSolar: React.FC = () => {
         
         {/* center text - moved inside the solar system so it stays centered with the orbits */}
         <div className="hero-solar-center">
-          <h1>Chloe ☾</h1>
+          <h1>chloe</h1>
         </div>
-z
       </div>
 
       {/* bottom info pill */}
