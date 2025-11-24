@@ -19,10 +19,6 @@ function Home() {
 
         {/* ABOUT */}
         <section id="about" className="home-section home-about">
-          <div className="home-about__content">
-            
-            
-          </div>
           <About/>
         </section>
 
