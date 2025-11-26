@@ -20,17 +20,16 @@ function About() {
                             <p className="about-label">about me</p>
                             <div className="about-body">
                                 <ul className="about-list">
-                                   <li>
-  A 20-something figuring out life, studying Computer Science, and interning in Data 
-  <span className="amp-sentient">&amp;</span> AI along the way.
-</li>
-<li>
-  I like building small tools, cleaning messy data, and understanding how things work under the hood.
-</li>
+                                    <li>
+                                        A 20-something figuring out life, studying Computer Science, and interning in Data <span className="amp-sentient">&amp;</span> AI along the way.
+                                    </li>
+                                    <li>
+                                        I like building small tools, cleaning messy data, and understanding how things work under the hood.
+                                    </li>
 
-<li>
-  Most days I learn something new; the rest I spend trying not to break anything important.
-</li>
+                                    <li>
+                                        Most days I learn something new; the rest I spend trying not to break anything important.
+                                    </li>
 
                                 </ul>
 
