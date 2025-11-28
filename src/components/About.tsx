@@ -24,7 +24,7 @@ function About() {
                                         A 20-something figuring out life, studying Computer Science, and interning in Data <span className="amp-sentient">&amp;</span> AI along the way.
                                     </li>
                                     <li>
-                                        I like building small tools, cleaning messy data, and understanding how things work under the hood.
+                                        I like building stuff, cleaning messy data, and understanding how things work under the hood.
                                     </li>
 
                                     <li>
@@ -43,9 +43,6 @@ function About() {
                                 <ul className="about-list">
                                     <li>
                                         Grow into data engineering, build cleaner architecture, and reduce mystery errors.
-                                    </li>
-                                    <li>
-                                        Become a solid software engineer who understands systems deeply.
                                     </li>
                                     <li>
                                         Keep building things that matter and make someone’s day a bit easier.

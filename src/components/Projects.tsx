@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Projects.css";
+import MusicPlayer from "./MusicPlayer";
 
 import demo1 from "../assets/project-1.webp";
 import demo2 from "../assets/project-2.webp";
@@ -42,6 +43,8 @@ type FolderId = Media["id"];
 
 function Projects() {
   const [activeFolder, setActiveFolder] = useState<FolderId | null>(null);
+  const [showMusicPlayer, setShowMusicPlayer] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
   const activeMedia = mediaList.find((m) => m.id === activeFolder) ?? null;
 
@@ -58,15 +61,36 @@ function Projects() {
       <h1 className="projects-title">Projects.</h1>
 
       <div
-        className="imac-shell"
+        className={`imac-shell ${isPlayingMusic ? "music-playing" : ""}`}
         aria-label="Interactive iMac with project folders"
       >
         {/* Outer black bezel with camera */}
         <div className="imac-bezel">
           <div className="imac-camera" />
           <div className="imac-screen" aria-live="polite">
+            {/* MUSIC PLAYER (when active) */}
+            {showMusicPlayer && (
+              <MusicPlayer 
+                onClose={() => setShowMusicPlayer(false)} 
+                inline={true}
+                onPlayStateChange={setIsPlayingMusic}
+              />
+            )}
+
+            {/* MUSIC ICON BUTTON - show only on default folder grid */}
+            {!activeMedia && !showMusicPlayer && (
+              <button
+                className="imac-music-btn"
+                onClick={() => setShowMusicPlayer(true)}
+                aria-label="Open music player"
+                title="Music player"
+              >
+                ♫
+              </button>
+            )}
+
             {/* FOLDER GRID (default state) */}
-            {!activeMedia && (
+            {!activeMedia && !showMusicPlayer && (
               <div
                 className="folder-grid"
                 role="list"

@@ -23,11 +23,33 @@
 .imac-shell {
   /* Target a comfortable max width for a 13" laptop viewport */
   width: min(750px, 72vw);
-  /* keep the outer shell proportion but slightly taller to match screenshots */
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 7;
+  /* Taller aspect ratio for more screen space */
+  /* aspect-ratio: 9 / 14; */
   margin-inline: auto;
   position: relative;
   font-size: var(--text-md);
+  /* default RGB for music glow (r,g,b) - used by breathing shadow */
+  --music-glow: 59,130,246;
+}
+
+/* Breathing shadow animation when music is playing */
+.imac-shell.music-playing .imac-bezel {
+  animation: breathingShadow 2s ease-in-out infinite;
+}
+
+@keyframes breathingShadow {
+  0%, 100% {
+    box-shadow:
+      0 18px 40px rgba(15, 23, 42, 0.45),
+      0 0 0 1px rgba(251, 180, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 18px 50px rgba(15, 23, 42, 0.55),
+      0 0 0 1px rgba(15, 23, 42, 0.7),
+      0 0 20px rgba(var(--music-glow, 59,130,246), 0.22);
+  }
 }
 
 /* Outer frame (black bezel) */
@@ -46,6 +68,39 @@
   align-items: center;
 }
 
+/* Music icon button (inside screen at bottom-left) */
+.imac-music-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+  z-index: 10;
+}
+
+.imac-music-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.imac-music-btn:focus-visible {
+  outline: 2px solid rgba(59,130,246,0.6);
+  outline-offset: 2px;
+}
+
 /* Camera dot */
 .imac-camera {
   width: 7px;
@@ -59,9 +114,10 @@
 /* Inner white screen */
 .imac-screen {
   width: 100%;
+  height: 100%;
   background: #fdfdfd;
   border-radius: 18px;
-  aspect-ratio: 16 / 9;
+  /* aspect-ratio: 16 / 9; */
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.55);
   overflow: hidden;
   position: relative;
